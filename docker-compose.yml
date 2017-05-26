@@ -1,0 +1,17 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5001:5432"
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://postgres@db:5432/postgres
+    depends_on:
+      - db
