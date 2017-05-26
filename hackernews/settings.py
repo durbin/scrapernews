@@ -26,7 +26,7 @@ SECRET_KEY = 'ptnf%!*+p87ep8cswll5pwd1ge!6u(71%=^@3t$13zxrl3vezo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['scrapernews.herokuapp.com']
 
 
 # Application definition
