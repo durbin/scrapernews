@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scrapernews - 100 Latest Posts on Hacker News.</title>
+    <link href="https://fonts.googleapis.com/css?family=Barrio|Open+Sans" rel="stylesheet">
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+        <h1>100 Latest Posts on Hacker News.</h1>
+        <p>
+            This web application scrapes Hacker News every ten minutes and displays 
+            the 100 latests posts. Through the site's admin application users can view 
+            all scraped items from Hacker News.
+        </p>
+        <p>
+            <a href="/admin">Click here</a> to view the admin application. The login 
+            username is <strong>scraper</strong> and the password is <strong>flexfits</strong>.
+        </p>
+    </div>
+    {% for item in items %}
+        <div class="item">    
+            <div class="title">
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </div>
+            <div class="hacker">{{ item.hacker }}</div>
+            <div class="points">{{ item.points }}</div>
+        </div>
+    {% endfor %}
+
+  </body>
+</html>
